@@ -16,7 +16,7 @@ import {styles} from './styles';
 function BottomSheetAtom() {
   const bottomSheetRef = useRef(0);
   const navigation = useNavigation();
-  const snapPoints = useMemo(() => ['10%', '20%'], []);
+  const snapPoints = useMemo(() => ['15%', '20%'], []);
   const handleSheetChanges = useCallback(index => {
     console.log('handleSheetChanges', index);
   }, []);
