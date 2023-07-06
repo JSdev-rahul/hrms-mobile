@@ -1,11 +1,12 @@
-import React from 'react';
-import {View, Text, Image} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, Text, Image, FlatList, Dimensions} from 'react-native';
 import BottomSheetAtom from '../../../components/atoms/bottomSheet/BottomSheetAtom';
 import HeaderAtom from '../../../components/atoms/header/HeaderAtom';
 import {COLORS, IMAGES} from '../../../constants';
-import {ProgressBar, Colors} from 'react-native-paper';
-import AppButton from '../../../components/atoms/buttons/AppButtons';
-
+import ItemStatus from './ItemStatus';
+import {timeStatus, weekStatus} from '../../../constants/listData';
+import ItemWeekStatus from './ItemWeekStatus';
+import ListHeadeComponent from './ListHeadeComponent';
 function HomeScreen() {
   return (
     <View style={{flex: 1}}>
@@ -38,65 +39,29 @@ function HomeScreen() {
           </Text>
         </View>
       </View>
-      <View
-        style={{
-          marginHorizontal: 20,
-          marginTop: 15,
-          height: 250,
-          backgroundColor: COLORS.WHITE,
-          borderTopLeftRadius: 20,
-          borderTopRightRadius: 20,
-          borderBottomRightRadius: 10,
-          borderBottomLeftRadius: 10,
-        }}>
-        <View
-          style={{
-            backgroundColor: COLORS.GREEN,
-            height: 55,
-            borderTopLeftRadius: 20,
-            borderTopRightRadius: 20,
-            justifyContent: 'center',
-            paddingStart: 15,
-          }}>
-          <Text style={{fontSize: 16, fontWeight: 'bold', color: COLORS.WHITE}}>
-            6 Feb, Friday
-          </Text>
-        </View>
-        <View style={{marginTop: 10}}>
-          <Text
-            style={{textAlign: 'center', fontSize: 20, color: COLORS.BLACK}}>
-            00 : 00 : 00 Hrs
-          </Text>
-          <View style={{width: 300, marginTop: 20, alignSelf: 'center'}}>
-            <ProgressBar progress={0.2} color={COLORS.GREEN} />
-          </View>
-          <Text
-            style={{
-              textAlign: 'center',
-              marginTop: 20,
-              color: COLORS.BLACK,
-              fontSize: 14,
-            }}>
-            Shift Timeing 10:00 AM TO 6:00 PM
-          </Text>
-          <View
-            style={{
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginTop: 10,
-            }}>
-            <AppButton
-              btnStyle={{
-                backgroundColor: 'green',
-                color: COLORS.WHITE,
-                height: 40,
-                width: '50%',
-              }}
-              btnTextStyle={{color: COLORS.WHITE}}
-              btnText={'Check in'}
-            />
-          </View>
-        </View>
+      <View>
+        <FlatList
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          data={timeStatus}
+          renderItem={({item, index}) => (
+            <ItemStatus item={item} index={index} />
+          )}
+        />
+      </View>
+      <View>
+        <FlatList
+          ListHeaderComponent={ListHeadeComponent}
+          data={weekStatus}
+          contentContainerStyle={{
+            backgroundColor: COLORS.WHITE,
+            marginHorizontal: 20,
+            borderRadius: 20,
+            marginTop: 10,
+          }}
+          showsVerticalScrollIndicator={false}
+          renderItem={({item}) => <ItemWeekStatus item={item} />}
+        />
       </View>
       <BottomSheetAtom />
     </View>
