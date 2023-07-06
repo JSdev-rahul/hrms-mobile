@@ -30,10 +30,10 @@ function HomeScreen() {
             marginLeft: 10,
             justifyContent: 'center',
           }}>
-          <Text style={{fontSize: 20, fontWeight: 500, color: COLORS.GREEN}}>
+          <Text style={{fontSize: 20, fontWeight: 500, color: COLORS.BLACK}}>
             Welcome,Adarsh Raj
           </Text>
-          <Text style={{fontSize: 12, color: COLORS.GREEN}}>
+          <Text style={{fontSize: 12, color: COLORS.BLACK}}>
             React Native Developer
           </Text>
         </View>
@@ -62,7 +62,7 @@ function HomeScreen() {
             6 Feb, Friday
           </Text>
         </View>
-        <View style={{marginTop: 20}}>
+        <View style={{marginTop: 10}}>
           <Text
             style={{textAlign: 'center', fontSize: 20, color: COLORS.BLACK}}>
             00 : 00 : 00 Hrs
@@ -103,7 +103,3 @@ function HomeScreen() {
   );
 }
 export default HomeScreen;
-
-const styles = StyleSheet.create({
-  
-});

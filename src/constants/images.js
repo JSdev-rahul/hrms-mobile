@@ -1,9 +1,9 @@
 export const IMAGES = {
   santophy: require('../assets/images/santophy.png'),
   arrow: require('../assets/images/arrow.png'),
-  onBoarding_1: require('../assets/images/onBoarding1.png'),
-  onBoarding_2: require('../assets/images/onBoarding2.png'),
-  onBoarding_3: require('../assets/images/onBoarding3.png'),
+  onBoarding_1: require('../assets/images/boarding1.png'),
+  onBoarding_2: require('../assets/images/boarding2.png'),
+  onBoarding_3: require('../assets/images/boarding3.png'),
   eclipse_1: require('../assets/images/eclipse_1.png'),
   eclipse_2: require('../assets/images/eclipse_2.png'),
   leave: require('../assets/images/leave.png'),
@@ -11,8 +11,6 @@ export const IMAGES = {
   profile: require('../assets/images/profile.png'),
   backArrow:require('../assets/images/back_arrow.png'),
   notify:require('../assets/images/notify.png'),
-  user:require('../assets/images/userImage.png')
-
-
-
+  user:require('../assets/images/userImage.png'),
+  
 };
