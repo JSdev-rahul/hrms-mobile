@@ -10,7 +10,9 @@ export const IMAGES = {
   homeIcom: require('../assets/images/home.png'),
   profile: require('../assets/images/profile.png'),
   backArrow:require('../assets/images/back_arrow.png'),
-  notify:require('../assets/images/notify.png')
+  notify:require('../assets/images/notify.png'),
+  user:require('../assets/images/userImage.png')
+
 
 
 };

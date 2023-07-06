@@ -1,21 +1,25 @@
-import React from 'react';
-import {Text, Image, Pressable, View} from 'react-native';
+import {Image, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
-import {COLORS} from '../../../constants';
-function AppButton({title, image, onPress, color = 'red'}) {
+
+const AppButton = ({
+  btnText,
+  btnStyle = {},
+  onPress = () => {},
+  img,
+  btnTextStyle = {},
+}) => {
   return (
-    <Pressable
-      android_ripple={{
-        borderless: false,
-        foreground: true,
-      }}
-      style={[styles.button, {borderColor: COLORS[color], overflow: 'hidden'}]}
-      onPress={onPress}>
-      <View style={{flexDirection: 'row'}}>
-        <Image source={image} style={styles.imageStyle} resizeMode="contain" />
-        <Text style={styles.text}>{title}</Text>
-      </View>
-    </Pressable>
+    <TouchableOpacity
+      activeOpacity={0.8}
+      onPress={onPress}
+      style={{...styles.btnStyle, ...btnStyle}}>
+      {!!img ? (
+        <Image style={{tintColor: colors.white}} source={img} />
+      ) : (
+        <Text style={{...styles.btnTextStyle, ...btnTextStyle}}>{btnText}</Text>
+      )}
+    </TouchableOpacity>
   );
-}
+};
+
 export default AppButton;
