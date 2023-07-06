@@ -16,7 +16,7 @@ import {styles} from './styles';
 function BottomSheetAtom() {
   const bottomSheetRef = useRef(0);
   const navigation = useNavigation();
-  const snapPoints = useMemo(() => ['15%', '20%'], []);
+  const snapPoints = useMemo(() => ['26%', '40%'], []);
   const handleSheetChanges = useCallback(index => {
     console.log('handleSheetChanges', index);
   }, []);
@@ -59,7 +59,7 @@ function BottomSheetAtom() {
             style={{
               justifyContent: 'center',
               alignItems: 'center',
-              borderRadius: 20,
+              borderRadius: 30,
               borderWidth: 1,
               padding: 10,
               backgroundColor: COLORS.PURPLE,
