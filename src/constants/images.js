@@ -12,5 +12,10 @@ export const IMAGES = {
   backArrow:require('../assets/images/back_arrow.png'),
   notify:require('../assets/images/notify.png'),
   user:require('../assets/images/userImage.png'),
-  
+  proIcon:require('../assets/images/proIcon.png'),
+  slip:require('../assets/images/slip.png'),
+  about:require('../assets/images/about.png'),
+  bank:require('../assets/images/bank.png'),
+
+
 };
