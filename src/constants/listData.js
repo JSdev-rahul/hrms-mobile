@@ -60,3 +60,30 @@ export const weekStatus = [
     to: '7 : 30 PM',
   },
 ];
+
+export const folderName = [
+  {
+    id: 1,
+    Icon:IMAGES.proIcon,
+    title: 'My Profile',
+    image: IMAGES.arrow,
+  },
+  {
+    id: 2,
+    Icon:IMAGES.bank,
+    title: 'Bank Details',
+    image: IMAGES.arrow,
+  },
+  {
+    id: 3,
+    Icon:IMAGES.slip,
+    title: 'Slips',
+    image: IMAGES.arrow,
+  },
+  {
+    id: 3,
+    Icon:IMAGES.about,
+    title: 'About',
+    image: IMAGES.arrow,
+  },
+];
