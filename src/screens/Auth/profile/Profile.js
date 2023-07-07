@@ -1,5 +1,5 @@
 import {View, Text, Image, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import HeaderAtom from '../../../components/atoms/header/HeaderAtom';
 import {IMAGES} from '../../../constants';
 import {styles} from './styles';
@@ -9,6 +9,8 @@ import {folderName} from '../../../constants/listData';
 
 const Profile = () => {
   const navigation = useNavigation();
+  const [isPress,setIsPress]=useState(false)
+
   return (
     <View style={styles.container}>
       <HeaderAtom
@@ -45,8 +47,8 @@ const Profile = () => {
         </View>
         <View style={styles.btnContainer}>
           <AppButton
-            btnStyle={styles.logoutBtn}
-            btnTextStyle={styles.btnText}
+            style={!isPress?styles.logoutBtn1:styles.logoutBtn2}
+            btnTextStyle={!isPress?styles.btnText1:styles.btnText2}
             btnText={'Logout'}
           />
         </View>

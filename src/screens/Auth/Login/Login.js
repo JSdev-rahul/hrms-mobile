@@ -1,5 +1,5 @@
 import {View, Text, Image, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './styles';
 import {COLORS, IMAGES, ROUTES} from '../../../constants';
 import TextInputTemplate from '../../../components/templates/TextInputTemplate';
@@ -10,6 +10,8 @@ import {scale} from 'react-native-size-matters';
 
 const Login = () => {
   const navigation = useNavigation();
+  var [isPress, setIsPress] = useState(false);
+
   return (
     <KeyboardAwareScrollView style={styles.container} enableAutomaticScroll>
       <View style={styles.headerStyle}>
@@ -58,8 +60,9 @@ const Login = () => {
         </View>
         <View>
           <AppButton
-            btnStyle={{backgroundColor: COLORS.PURPLE, color: COLORS.WHITE}}
-            btnTextStyle={{color: COLORS.WHITE}}
+            Ripple={COLORS.GREEN}
+            style={isPress ? styles.btnPress : styles.btnNormal}
+            btnTextStyle={isPress ? styles.btnColor : styles.btnWithColor}
             btnText={'Login'}
             onPress={() => navigation.navigate(ROUTES.HOME_SCREEN)}
           />

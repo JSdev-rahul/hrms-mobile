@@ -1,24 +1,27 @@
-import {Image, Text, TouchableOpacity} from 'react-native';
+import {Image, Pressable, Text} from 'react-native';
 import styles from './styles';
+import {COLORS} from '../../../constants';
 
 const AppButton = ({
   btnText,
-  btnStyle = {},
+  style,
   onPress = () => {},
   img,
   btnTextStyle = {},
+  Ripple,
 }) => {
   return (
-    <TouchableOpacity
+    <Pressable
+      android_ripple={Ripple}
       activeOpacity={0.8}
       onPress={onPress}
-      style={{...styles.btnStyle, ...btnStyle}}>
+      style={style}>
       {!!img ? (
         <Image style={{tintColor: colors.white}} source={img} />
       ) : (
-        <Text style={{...styles.btnTextStyle,...btnTextStyle}}>{btnText}</Text>
+        <Text style={{...styles.btnTextStyle, ...btnTextStyle}}>{btnText}</Text>
       )}
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 
