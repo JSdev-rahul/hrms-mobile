@@ -3,77 +3,24 @@ import React from 'react';
 import {COLORS} from '../../../constants';
 import {moderateScale, moderateVerticalScale} from 'react-native-size-matters';
 import {ProgressBar} from 'react-native-paper';
+import styles from './styles';
 
 const ItemWeekStatus = ({item}) => {
   return (
-    <View
-      style={{
-        borderRadius: 10,
-        justifyContent: 'center',
-        marginHorizontal: 10,
-      }}>
-      <View style={{flexDirection: 'row'}}>
-        <Text
-          style={{
-            margin: moderateScale(10),
-            fontWeight: 'bold',
-            backgroundColor: COLORS.LIGHT_GREY,
-            padding: 10,
-            borderRadius: 10,
-            color: COLORS.BLACK,
-          }}>
-          {item.day}
-        </Text>
-
-        <View style={{flex: 1, marginEnd: 10, justifyContent: 'center'}}>
-          <View
-            style={{
-              justifyContent: 'space-between',
-              flexDirection: 'row',
-            }}>
-            <Text
-              style={{
-                fontWeight: 'bold',
-                alignSelf: 'center',
-                borderRadius: 10,
-                color: COLORS.BLACK,
-              }}>
-              {item.title}
-            </Text>
-            <Text
-              style={{
-                fontWeight: 'bold',
-                alignSelf: 'center',
-                borderRadius: 10,
-                color: COLORS.BLACK,
-              }}>
-              {item.time}
-            </Text>
+    <View style={styles.weekContainer}>
+      <View style={styles.weekInnerContainer}>
+        <Text style={styles.titleWeekDay}>{item.day}</Text>
+        <View style={styles.weekContainerStyle}>
+          <View style={styles.weekInnerStyle}>
+            <Text style={styles.weekTitle}>{item.title}</Text>
+            <Text style={styles.weekTime}>{item.time}</Text>
           </View>
-          <View
-            style={{
-              justifyContent: 'space-between',
-              flexDirection: 'row',
-            }}>
-            <Text
-              style={{
-                fontWeight: 500,
-                alignSelf: 'center',
-                borderRadius: 10,
-              }}>
-              {item.from}
-            </Text>
-            <View style={{width: 100, alignSelf: 'center'}}>
+          <View style={styles.weekTimeContainer}>
+            <Text style={styles.titleFrom}>{item.from}</Text>
+            <View style={styles.progressView}>
               <ProgressBar progress={0.2} color={COLORS.GREEN} />
             </View>
-            <Text
-              style={{
-                fontWeight: 500,
-                alignSelf: 'center',
-                borderRadius: 10,
-              }}>
-              {item.to}
-            </Text>
+            <Text style={styles.titleTo}>{item.to}</Text>
           </View>
         </View>
       </View>

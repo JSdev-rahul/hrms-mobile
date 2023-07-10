@@ -25,14 +25,14 @@ export const timeStatus = [
     day: '6 Feb Friday',
     time: '00:00:00 AM',
     status: 'Check In',
-    backgroundColor: 'green',
+    backgroundColor: COLORS.DARK_GREEN,
   },
   {
     id: 2,
     day: '6 Feb Friday',
     time: '00:00:00 AM',
     status: 'Check Out',
-    backgroundColor: 'red',
+    backgroundColor: COLORS.DARK_RED,
   },
 ];
 
@@ -64,26 +64,44 @@ export const weekStatus = [
 export const folderName = [
   {
     id: 1,
-    Icon:IMAGES.proIcon,
+    Icon: IMAGES.proIcon,
     title: 'My Profile',
     image: IMAGES.arrow,
   },
   {
     id: 2,
-    Icon:IMAGES.bank,
+    Icon: IMAGES.bank,
     title: 'Bank Details',
     image: IMAGES.arrow,
   },
   {
     id: 3,
-    Icon:IMAGES.slip,
+    Icon: IMAGES.slip,
     title: 'Slips',
     image: IMAGES.arrow,
   },
   {
     id: 3,
-    Icon:IMAGES.about,
+    Icon: IMAGES.about,
     title: 'About',
     image: IMAGES.arrow,
+  },
+];
+
+export const notifications = [
+  {
+    id: 1,
+    title: 'New Notification',
+    subTitle: '20 minutes ago',
+  },
+  {
+    id: 2,
+    title: 'New Notification',
+    subTitle: '20 minutes ago',
+  },
+  {
+    id: 3,
+    title: 'New Notification',
+    subTitle: '20 minutes ago',
   },
 ];

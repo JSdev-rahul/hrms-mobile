@@ -3,7 +3,13 @@ import React from 'react';
 import styles from './styles';
 import {scale} from 'react-native-size-matters';
 import {COLORS} from '../../../constants';
-const HeaderAtom = ({imageBack, title, imageRightArrow, onPress, onSkip}) => {
+const HeaderAtom = ({
+  imageBack,
+  title,
+  imageRightArrow,
+  onPress,
+  onPressIn,
+}) => {
   return (
     <View style={{...styles.headerListContainer}}>
       <TouchableOpacity onPress={onPress} style={styles.headerImageContainer}>
@@ -13,13 +19,15 @@ const HeaderAtom = ({imageBack, title, imageRightArrow, onPress, onSkip}) => {
       <Text
         style={{
           textAlign: 'center',
-          fontSize: scale(18),
+          fontSize: scale(16),
           fontWeight: 'bold',
           color: COLORS.GREEN,
         }}>
         {title}
       </Text>
-      <TouchableOpacity onPressIn={onSkip} style={styles.headerSearchContainer}>
+      <TouchableOpacity
+        onPressIn={onPressIn}
+        style={styles.headerSearchContainer}>
         <View style={styles.skipContainer}>
           <Image
             resizeMode={'contain'}
