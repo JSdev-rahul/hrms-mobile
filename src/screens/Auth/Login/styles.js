@@ -1,11 +1,17 @@
 import {StyleSheet} from 'react-native';
 import {COLORS} from '../../../constants';
 import {DIMENSIONS} from '../../../utils/Dimensions';
-import {moderateScale, moderateVerticalScale, scale, verticalScale} from 'react-native-size-matters';
+import {
+  moderateScale,
+  moderateVerticalScale,
+  scale,
+  verticalScale,
+} from 'react-native-size-matters';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'space-between',
     backgroundColor: COLORS.WHITE,
   },
   headerStyle: {
@@ -87,11 +93,13 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     marginVertical: 10,
     marginBottom: 24,
+    width: '88%',
   },
   forgetPwdStyle: {
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
     marginTop: 5,
+    marginEnd: moderateScale(10),
   },
   pwdStyle: {
     fontSize: scale(12),

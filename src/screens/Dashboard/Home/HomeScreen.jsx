@@ -2,15 +2,21 @@ import React, {useEffect, useState} from 'react';
 import {View, Text, Image, FlatList, Dimensions} from 'react-native';
 import BottomSheetAtom from '../../../components/atoms/bottomSheet/BottomSheetAtom';
 import HeaderAtom from '../../../components/atoms/header/HeaderAtom';
-import {COLORS, IMAGES} from '../../../constants';
+import {COLORS, IMAGES, ROUTES} from '../../../constants';
 import ItemStatus from './ItemStatus';
 import {timeStatus, weekStatus} from '../../../constants/listData';
 import ItemWeekStatus from './ItemWeekStatus';
 import ListHeadeComponent from './ListHeadeComponent';
+import {useNavigation} from '@react-navigation/native';
 function HomeScreen() {
+  const navigation = useNavigation();
   return (
     <View style={{flex: 1}}>
-      <HeaderAtom title="Home" imageRightArrow={IMAGES.notify} />
+      <HeaderAtom
+        title="Home"
+        imageRightArrow={IMAGES.notify}
+        onPressIn={() => navigation.navigate(ROUTES.NOTIFICATION)}
+      />
       <View style={{marginHorizontal: 20, flexDirection: 'row'}}>
         <View
           style={{

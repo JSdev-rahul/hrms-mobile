@@ -3,7 +3,7 @@ import React from 'react';
 import {COLORS} from '../../../constants';
 import {ProgressBar} from 'react-native-paper';
 import AppButton from '../../../components/atoms/buttons/AppButtons';
-import {moderateVerticalScale} from 'react-native-size-matters';
+import {moderateVerticalScale, scale} from 'react-native-size-matters';
 
 const ItemStatus = ({item, index}) => {
   return (
@@ -28,12 +28,23 @@ const ItemStatus = ({item, index}) => {
           justifyContent: 'center',
           paddingStart: 15,
         }}>
-        <Text style={{fontSize: 16, fontWeight: 'bold', color: COLORS.WHITE}}>
+        <Text
+          style={{
+            fontSize: scale(16),
+            fontWeight: 'bold',
+            color: COLORS.WHITE,
+          }}>
           {item.day}
         </Text>
       </View>
       <View style={{marginTop: 20}}>
-        <Text style={{textAlign: 'center', fontSize: 20, color: COLORS.BLACK}}>
+        <Text
+          style={{
+            textAlign: 'center',
+            fontSize: scale(16),
+            color: COLORS.BLACK,
+            fontWeight: 'bold',
+          }}>
           {item.time}
         </Text>
         <View style={{width: 300, marginTop: 20, alignSelf: 'center'}}>
@@ -44,15 +55,15 @@ const ItemStatus = ({item, index}) => {
             textAlign: 'center',
             marginTop: 20,
             color: COLORS.BLACK,
-            fontSize: 14,
+            fontSize: scale(12),
           }}>
-          Shift Timeing 10:00 AM TO 6:00 PM
+          Shift Timing 10:00 AM TO 6:00 PM
         </Text>
         <View
           style={{
             justifyContent: 'center',
             alignItems: 'center',
-            marginTop: moderateVerticalScale(25),
+            marginTop: moderateVerticalScale(12),
           }}>
           <AppButton
             btnStyle={{
