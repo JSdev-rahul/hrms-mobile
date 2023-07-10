@@ -16,7 +16,7 @@ const AppButton = ({
       {!!img ? (
         <Image style={{tintColor: colors.white}} source={img} />
       ) : (
-        <Text style={{...styles.btnTextStyle,...btnTextStyle}}>{btnText}</Text>
+        <Text style={{...styles.btnTextStyle, ...btnTextStyle}}>{btnText}</Text>
       )}
     </TouchableOpacity>
   );

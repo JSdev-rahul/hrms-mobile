@@ -1,7 +1,7 @@
-import {View, Text, FlatList} from 'react-native';
+import {View, FlatList} from 'react-native';
 import React from 'react';
 import HeaderAtom from '../../../components/atoms/header/HeaderAtom';
-import {IMAGES, ROUTES} from '../../../constants';
+import {IMAGES} from '../../../constants';
 import {useNavigation} from '@react-navigation/native';
 import ItemNotification from './ItemNotification';
 import {notifications} from '../../../constants/listData';

@@ -1,5 +1,9 @@
 import {StyleSheet} from 'react-native';
-import {moderateVerticalScale, scale} from 'react-native-size-matters';
+import {
+  moderateScale,
+  moderateVerticalScale,
+  scale,
+} from 'react-native-size-matters';
 import {COLORS} from '../../../constants';
 
 export const styles = StyleSheet.create({
@@ -78,14 +82,29 @@ export const styles = StyleSheet.create({
     marginTop: 30,
     alignItems: 'center',
   },
-  logoutBtn: {
-    rippleColor: COLORS.PURPLE,
-    backgroundColor: COLORS.GREEN,
-    color: COLORS.WHITE,
-    height: 40,
+  logoutBtn1: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 2,
     width: '50%',
+    height: moderateScale(45),
+    borderRadius: moderateScale(20),
+    borderColor: COLORS.GREEN,
   },
-  btnText: {
+  logoutBtn2: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 2,
+    width: '50%',
+    height: moderateScale(45),
+    borderRadius: moderateScale(20),
+    borderColor: COLORS.GREEN,
+    backgroundColor: COLORS.GREEN,
+  },
+  btnText1: {
+    color: COLORS.GREEN,
+  },
+  btnText2: {
     color: COLORS.WHITE,
   },
 });

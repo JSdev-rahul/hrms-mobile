@@ -106,5 +106,32 @@ const styles = StyleSheet.create({
     color: COLORS.PURPLE,
     marginTop: moderateVerticalScale(5),
   },
+  btnNormal: {
+    color: COLORS.PURPLE,
+    height: moderateScale(48),
+    borderRadius: moderateScale(20),
+    marginHorizontal: moderateScale(20),
+    borderColor: COLORS.PURPLE,
+    borderWidth: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  btnPress: {
+    color: COLORS.WHITE,
+    height: moderateScale(48),
+    borderRadius: moderateScale(20),
+    marginHorizontal: moderateScale(20),
+    borderColor: COLORS.GREEN,
+    borderWidth: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: COLORS.GREEN,
+  },
+  btnColor: {
+    color: COLORS.WHITE,
+  },
+  btnWithColor: {
+    color: COLORS.PURPLE,
+  },
 });
 export default styles;

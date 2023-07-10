@@ -1,7 +1,6 @@
 import {View, Text, Image} from 'react-native';
 import React from 'react';
-import {COLORS, IMAGES} from '../../../constants';
-import {moderateScale, scale} from 'react-native-size-matters';
+import {IMAGES} from '../../../constants';
 import styles from './styles';
 
 const ItemNotification = ({item}) => {

@@ -1,6 +1,7 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import {COLORS} from '../../../constants';
+import styles from './styles';
 
 const ListHeadeComponent = () => {
   return (
@@ -11,10 +12,8 @@ const ListHeadeComponent = () => {
         marginTop: 10,
         marginHorizontal: 20,
       }}>
-      <Text style={{fontWeight: 'bold', color: COLORS.BLACK}}>This Week</Text>
-      <Text style={{fontWeight: 'bold', color: COLORS.BLACK}}>
-        8 h 14 m / 40 hrs
-      </Text>
+      <Text style={styles.titleWeek}>This Week</Text>
+      <Text style={styles.titleWeekTime}>8 h 14 m / 40 hrs</Text>
     </View>
   );
 };

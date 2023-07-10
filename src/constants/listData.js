@@ -25,14 +25,14 @@ export const timeStatus = [
     day: '6 Feb Friday',
     time: '00:00:00 AM',
     status: 'Check In',
-    backgroundColor: 'green',
+    backgroundColor: COLORS.DARK_GREEN,
   },
   {
     id: 2,
     day: '6 Feb Friday',
     time: '00:00:00 AM',
     status: 'Check Out',
-    backgroundColor: 'red',
+    backgroundColor: COLORS.DARK_RED,
   },
 ];
 

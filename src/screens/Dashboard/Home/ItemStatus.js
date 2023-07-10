@@ -1,70 +1,27 @@
-import {View, Text, Dimensions} from 'react-native';
+import {View, Text} from 'react-native';
 import React from 'react';
 import {COLORS} from '../../../constants';
 import {ProgressBar} from 'react-native-paper';
 import AppButton from '../../../components/atoms/buttons/AppButtons';
-import {moderateVerticalScale, scale} from 'react-native-size-matters';
-
+import styless from './styles';
+import styles from './styles';
 const ItemStatus = ({item, index}) => {
   return (
-    <View
-      style={{
-        marginHorizontal: 20,
-        marginTop: 15,
-        height: Dimensions.get('window').height / 3.5,
-        width: Dimensions.get('window').width / 1.1,
-        backgroundColor: COLORS.WHITE,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-        borderBottomRightRadius: 10,
-        borderBottomLeftRadius: 10,
-      }}>
+    <View style={styless.cardHeader}>
       <View
-        style={{
-          backgroundColor: index % 2 == 0 ? COLORS.GREEN : COLORS.PURPLE,
-          height: 55,
-          borderTopLeftRadius: 20,
-          borderTopRightRadius: 20,
-          justifyContent: 'center',
-          paddingStart: 15,
-        }}>
-        <Text
-          style={{
-            fontSize: scale(16),
-            fontWeight: 'bold',
-            color: COLORS.WHITE,
-          }}>
-          {item.day}
-        </Text>
+        style={[
+          styless.cardInner,
+          {backgroundColor: index % 2 == 0 ? COLORS.GREEN : COLORS.PURPLE},
+        ]}>
+        <Text style={styles.titleDay}>{item.day}</Text>
       </View>
-      <View style={{marginTop: 20}}>
-        <Text
-          style={{
-            textAlign: 'center',
-            fontSize: scale(16),
-            color: COLORS.BLACK,
-            fontWeight: 'bold',
-          }}>
-          {item.time}
-        </Text>
-        <View style={{width: 300, marginTop: 20, alignSelf: 'center'}}>
+      <View style={styles.titleContainer}>
+        <Text style={styles.titleTime}>{item.time}</Text>
+        <View style={styles.viewProgressBar}>
           <ProgressBar progress={0.2} color={COLORS.GREEN} />
         </View>
-        <Text
-          style={{
-            textAlign: 'center',
-            marginTop: 20,
-            color: COLORS.BLACK,
-            fontSize: scale(12),
-          }}>
-          Shift Timing 10:00 AM TO 6:00 PM
-        </Text>
-        <View
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginTop: moderateVerticalScale(12),
-          }}>
+        <Text style={styles.titleShift}>Shift Timing 10:00 AM TO 6:00 PM</Text>
+        <View style={styles.buttonContainer}>
           <AppButton
             btnStyle={{
               backgroundColor: item.backgroundColor,

@@ -10,13 +10,13 @@ import BottomSheet, {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {Icons} from '../../../constants/listData';
 import {COLORS, ROUTES} from '../../../constants';
-import {useFocusEffect, useNavigation} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import {styles} from './styles';
 
 function BottomSheetAtom() {
   const bottomSheetRef = useRef(0);
   const navigation = useNavigation();
-  const snapPoints = useMemo(() => ['26%', '40%'], []);
+  const snapPoints = useMemo(() => ['26%', '30%'], []);
   const handleSheetChanges = useCallback(index => {
     console.log('handleSheetChanges', index);
   }, []);
@@ -33,12 +33,6 @@ function BottomSheetAtom() {
         break;
     }
   };
-
-  useFocusEffect(
-    React.useCallback(() => {
-      // return () => bottomSheetRef.current.close();
-    }, []),
-  );
 
   const renderItem = ({item}) => {
     console.log(item, '..........item');
@@ -60,12 +54,13 @@ function BottomSheetAtom() {
               justifyContent: 'center',
               alignItems: 'center',
               borderRadius: 30,
-              borderWidth: 1,
+              borderColor: COLORS.GREEN,
+              borderWidth: 2,
               padding: 10,
-              backgroundColor: COLORS.PURPLE,
+              backgroundColor: COLORS.WHITE,
             }}>
             <Image
-              style={{height: 25, width: 25, tintColor: COLORS.WHITE}}
+              style={{height: 25, width: 25, tintColor: COLORS.GREEN}}
               source={item.icon}
             />
             {/* <Text style={{ color: COLORS.WHITE }}>{item.title}</Text> */}

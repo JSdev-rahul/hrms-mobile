@@ -1,48 +1,20 @@
-import {View, Text, Image, TouchableOpacity, Keyboard} from 'react-native';
-import React, {useEffect, useState} from 'react';
+import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
+import React, {useState} from 'react';
 import styles from './styles';
 import {COLORS, IMAGES, ROUTES} from '../../../constants';
 import TextInputTemplate from '../../../components/templates/TextInputTemplate';
 import AppButton from '../../../components/atoms/buttons/AppButtons';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {useNavigation} from '@react-navigation/native';
-import {
-  moderateScale,
-  moderateVerticalScale,
-  scale,
-} from 'react-native-size-matters';
+import {scale} from 'react-native-size-matters';
 
 const Login = () => {
   const navigation = useNavigation();
-  const [keybaordHeight, setKeyboardHeight] = useState(0);
-
-  useEffect(() => {
-    const keyboardDidShowListener = Keyboard.addListener(
-      'keyboardDidShow',
-      event => {
-        console.log('event trigger on show keyboard', event);
-        setKeyboardHeight(event.endCoordinates.height - 20);
-      },
-    );
-
-    const keyboardDidHideListener = Keyboard.addListener(
-      'keyboardDidHide',
-      event => {
-        console.log('event trigger on hide keyboard', event);
-        setKeyboardHeight(0);
-      },
-    );
-    return () => {
-      keyboardDidShowListener.remove();
-      keyboardDidHideListener.remove();
-    };
-  }, []);
+  var [isPress, setIsPress] = useState(false);
 
   return (
-    <KeyboardAwareScrollView
-      contentContainerStyle={styles.container}
-      enableAutomaticScroll>
-      <View>
+    <ScrollView contentContainerStyle={styles.container}>
+      <KeyboardAwareScrollView>
         <View style={styles.headerStyle}>
           <Image
             resizeMode="contain"
@@ -96,17 +68,8 @@ const Login = () => {
             />
           </View>
         </View>
-        <View
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            // marginVertical: moderateVerticalScale(10),
-            marginBottom: moderateVerticalScale(20),
-          }}>
-          {/* <Text style={{}}>Login</Text> */}
-        </View>
-      </View>
-    </KeyboardAwareScrollView>
+      </KeyboardAwareScrollView>
+    </ScrollView>
   );
 };
 
