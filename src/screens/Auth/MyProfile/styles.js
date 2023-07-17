@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     marginHorizontal: moderateScale(10),
   },
   buttonContainer: {
-    marginTop: moderateVerticalScale(10),
+    marginTop: moderateVerticalScale(30),
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: moderateVerticalScale(10),

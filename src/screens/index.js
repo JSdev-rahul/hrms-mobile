@@ -6,3 +6,4 @@ export {default as Profile} from '../screens/Auth/Profile/Profile';
 export {default as MyProfile} from '../screens/Auth/MyProfile/MyProfile';
 export {default as Leaves} from '../screens/Dashboard/Leaves/Leaves';
 export {default as LeaveRequest} from '../screens/Dashboard/Leaves/LeaveRequest';
+export {default as BankDetails} from '../screens/Dashboard/BankDetails/BankDetails';

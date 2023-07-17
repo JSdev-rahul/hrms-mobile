@@ -221,3 +221,30 @@ export const notifications = [
     subTitle: '20 minutes ago',
   },
 ];
+export const BankDetail = [
+  {
+    id: 0,
+    Title: 'Bank Name',
+    SubTitle: 'Union Bank Of India, Madhya Pradesh',
+  },
+  {
+    id: 1,
+    Title: 'Account Holder Name',
+    SubTitle: 'Adarsh Raj Patel',
+  },
+  {
+    id: 2,
+    Title: 'Account number',
+    SubTitle: '520245434',
+  },
+  {
+    id: 3,
+    Title: 'Branch Name',
+    SubTitle: 'Indore 452001, Madhya Pradesh',
+  },
+  {
+    id: 4,
+    Title: 'IFSC Code',
+    SubTitle: 'CBIN01016',
+  },
+];
