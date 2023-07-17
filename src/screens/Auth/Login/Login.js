@@ -10,8 +10,6 @@ import {scale} from 'react-native-size-matters';
 
 const Login = () => {
   const navigation = useNavigation();
-  var [isPress, setIsPress] = useState(false);
-
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <KeyboardAwareScrollView>

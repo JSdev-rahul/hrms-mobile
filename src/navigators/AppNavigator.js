@@ -2,9 +2,17 @@ import React, {useEffect, useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {ROUTES} from '../constants';
-import {HomeScreen, Login, Notification, Onboarding} from '../screens';
+import {
+  HomeScreen,
+  LeaveRequest,
+  Leaves,
+  Login,
+  MyProfile,
+  Notification,
+  Onboarding,
+  Profile,
+} from '../screens';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Profile from '../screens/Auth/profile/Profile';
 
 const Stack = createNativeStackNavigator();
 const AppNavigator = () => {
@@ -39,6 +47,9 @@ const AppNavigator = () => {
         <Stack.Screen name={ROUTES.HOME_SCREEN} component={HomeScreen} />
         <Stack.Screen name={ROUTES.PROFILE} component={Profile} />
         <Stack.Screen name={ROUTES.NOTIFICATION} component={Notification} />
+        <Stack.Screen name={ROUTES.LEAVES} component={Leaves} />
+        <Stack.Screen name={ROUTES.MY_PROFILE} component={MyProfile} />
+        <Stack.Screen name={ROUTES.LEAVE_REQUEST} component={LeaveRequest} />
       </Stack.Navigator>
     </NavigationContainer>
   );

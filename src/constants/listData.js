@@ -9,7 +9,7 @@ export const Icons = [
   },
   {
     id: 1,
-    title: 'Leave',
+    title: 'Leaves',
     icon: IMAGES.leave,
   },
   {
@@ -18,7 +18,98 @@ export const Icons = [
     icon: IMAGES.profile,
   },
 ];
-
+export const leaves = [
+  {
+    id: 1,
+    title: 'All',
+  },
+  {
+    id: 2,
+    title: 'Accepted',
+  },
+  {
+    id: 3,
+    title: 'Rejected',
+  },
+  {
+    id: 4,
+    title: 'Approved',
+  },
+];
+export const leavesStatus = [
+  {
+    id: 1,
+    status: 'Accepted',
+    status_id: 1,
+    type: 'Early Leave',
+    from: '25-07-2023',
+    to: '25-07-2023',
+    color: COLORS.ORANGE,
+  },
+  {
+    id: 2,
+    status: 'Accepted',
+    type: 'Sick Leave',
+    status_id: 1,
+    from: '30-08-2023',
+    to: '04-08-2023',
+    color: COLORS.ORANGE,
+  },
+  {
+    id: 3,
+    status: 'Accepted',
+    type: 'Sick Leave',
+    status_id: 2,
+    from: '30-08-2023',
+    to: '04-08-2023',
+    color: COLORS.ORANGE,
+  },
+  {
+    id: 4,
+    status: 'Accepted',
+    type: 'Sick Leave',
+    status_id: 2,
+    from: '30-08-2023',
+    to: '04-08-2023',
+    color: COLORS.ORANGE,
+  },
+  {
+    id: 5,
+    status: 'Rejected',
+    type: 'Sick Leave',
+    status_id: 3,
+    from: '30-08-2023',
+    to: '04-08-2023',
+    color: COLORS.DARK_RED,
+  },
+  {
+    id: 6,
+    status: 'Rejected',
+    type: 'Sick Leave',
+    status_id: 3,
+    from: '30-08-2023',
+    to: '04-08-2023',
+    color: COLORS.DARK_RED,
+  },
+  {
+    id: 7,
+    status: 'Approved',
+    type: 'Sick Leave',
+    status_id: 4,
+    from: '30-08-2023',
+    to: '04-08-2023',
+    color: COLORS.DARK_GREEN,
+  },
+  {
+    id: 8,
+    status: 'Approved',
+    type: 'Sick Leave',
+    status_id: 4,
+    from: '30-08-2023',
+    to: '04-08-2023',
+    color: COLORS.DARK_GREEN,
+  },
+];
 export const timeStatus = [
   {
     id: 1,
@@ -35,7 +126,32 @@ export const timeStatus = [
     backgroundColor: COLORS.DARK_RED,
   },
 ];
-
+export const data = [
+  {
+    id: '1',
+  },
+  {
+    id: '2',
+  },
+];
+export const options = [
+  {id: 1, name: 'Sick Leave'},
+  {id: 2, name: 'Early Leave'},
+];
+export const radioButton = [
+  {
+    id: 1,
+    title: 'Full time',
+  },
+  {
+    id: 2,
+    title: 'First Half',
+  },
+  {
+    id: 3,
+    title: 'Second Hal',
+  },
+];
 export const weekStatus = [
   {
     id: 1,
