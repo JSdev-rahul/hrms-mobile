@@ -1,4 +1,4 @@
-import {Button, Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import DropDown from '../../../components/atoms/dropDown/DropDown';
 import {options} from '../../../constants/listData';

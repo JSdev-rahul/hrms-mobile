@@ -12,6 +12,7 @@ import {
   Notification,
   Onboarding,
   Profile,
+  Slips,
 } from '../screens';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -52,6 +53,8 @@ const AppNavigator = () => {
         <Stack.Screen name={ROUTES.MY_PROFILE} component={MyProfile} />
         <Stack.Screen name={ROUTES.LEAVE_REQUEST} component={LeaveRequest} />
         <Stack.Screen name={ROUTES.BANK_DETAILS} component={BankDetails} />
+        <Stack.Screen name={ROUTES.SLIPS} component={Slips} />
+        <Stack.Screen name={ROUTES.ABOUT} component={About} />
       </Stack.Navigator>
     </NavigationContainer>
   );
