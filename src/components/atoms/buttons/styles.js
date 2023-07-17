@@ -1,27 +1,36 @@
-import {
-  moderateScale,
-  moderateVerticalScale,
-  scale,
-} from 'react-native-size-matters';
+import {moderateScale, scale} from 'react-native-size-matters';
 import {COLORS} from '../../../constants';
 
 const {StyleSheet} = require('react-native');
 
 const styles = StyleSheet.create({
-  button: {
+  btnStyle: {
+    height: moderateScale(48),
     backgroundColor: COLORS.PURPLE,
-    borderRadius: moderateScale(25),
-    justifyContent: 'center',
+    borderRadius: moderateScale(20),
+    marginHorizontal: moderateScale(20),
     alignItems: 'center',
-    padding: moderateScale(12),
+    justifyContent: 'center',
     width: '90%',
-    alignSelf: 'center',
   },
-  text: {
-    color: COLORS.WHITE,
+  btnTextStyle: {
     fontSize: scale(14),
+    color: COLORS.WHITE,
     fontWeight: 'bold',
-    alignSelf: 'center',
+  },
+  btnColorStyle: {
+    height: moderateScale(48),
+    backgroundColor: COLORS.GREY,
+    borderRadius: moderateScale(8),
+    marginHorizontal: moderateScale(10),
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  btnColorTextStyle: {
+    fontSize: scale(14),
+    color: COLORS.WHITE,
+    fontWeight: 'bold',
+    marginHorizontal: 20,
   },
 });
 export default styles;

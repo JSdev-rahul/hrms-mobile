@@ -6,7 +6,8 @@ const TextInputAtom = ({
   value,
   keyboardType,
   editable,
-  style,
+  textAlignVertical,
+  style = {},
   ...otherProps
 }) => {
   return (
@@ -16,6 +17,7 @@ const TextInputAtom = ({
       keyboardType={keyboardType}
       editable={editable}
       style={style}
+      textAlignVertical={textAlignVertical}
       {...otherProps}
     />
   );

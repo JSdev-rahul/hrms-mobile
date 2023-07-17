@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     height: 20,
     marginStart: 5,
     alignSelf: 'center',
+    tintColor:COLORS.GREEN
   },
   headerTitleStyle: {
     marginStart: 10,
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
     alignSelf: 'center',
     fontSize: 12,
-    color: COLORS.ORANGE,
+    color: COLORS.GREEN,
   },
   skipContainer: {
     flexDirection: 'row',

@@ -1,16 +1,26 @@
 export const IMAGES = {
   santophy: require('../assets/images/santophy.png'),
   arrow: require('../assets/images/arrow.png'),
-  onBoarding_1: require('../assets/images/onBoarding1.png'),
-  onBoarding_2: require('../assets/images/onBoarding2.png'),
-  onBoarding_3: require('../assets/images/onBoarding3.png'),
+  onBoarding_1: require('../assets/images/boarding1.png'),
+  onBoarding_2: require('../assets/images/boarding2.png'),
+  onBoarding_3: require('../assets/images/boarding3.png'),
   eclipse_1: require('../assets/images/eclipse_1.png'),
   eclipse_2: require('../assets/images/eclipse_2.png'),
   leave: require('../assets/images/leave.png'),
   homeIcom: require('../assets/images/home.png'),
   profile: require('../assets/images/profile.png'),
-  backArrow:require('../assets/images/back_arrow.png'),
-  notify:require('../assets/images/notify.png')
-
-
+  backArrow: require('../assets/images/back_arrow.png'),
+  notify: require('../assets/images/notify.png'),
+  user: require('../assets/images/userImage.png'),
+  proIcon: require('../assets/images/proIcon.png'),
+  slip: require('../assets/images/slip.png'),
+  about: require('../assets/images/about.png'),
+  bank: require('../assets/images/bank.png'),
+  pencil: require('../assets/images/pencil.png'),
+  dropDown: require('../assets/images/drop_down.png'),
+  datePicker: require('../assets/images/datePiker.png'),
+  upload: require('../assets/images/upload.png'),
+  downloading: require('../assets/images/downloading.png'),
+  salarySlip: require('../assets/images/salary.png'),
+  meeting: require('../assets/images/meeting.png'),
 };
