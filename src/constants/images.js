@@ -16,4 +16,8 @@ export const IMAGES = {
   slip: require('../assets/images/slip.png'),
   about: require('../assets/images/about.png'),
   bank: require('../assets/images/bank.png'),
+  pencil: require('../assets/images/pencil.png'),
+  dropDown: require('../assets/images/drop_down.png'),
+  datePicker: require('../assets/images/datePiker.png'),
+  upload: require('../assets/images/upload.png'),
 };

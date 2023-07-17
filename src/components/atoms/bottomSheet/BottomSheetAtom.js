@@ -26,6 +26,9 @@ function BottomSheetAtom() {
       case 'Home':
         navigation.navigate(ROUTES.HOME_SCREEN);
         break;
+      case 'Leaves':
+        navigation.navigate(ROUTES.LEAVES);
+        break;
       case 'Profile':
         navigation.navigate(ROUTES.PROFILE);
         break;

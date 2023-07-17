@@ -11,11 +11,26 @@ const styles = StyleSheet.create({
     marginHorizontal: moderateScale(20),
     alignItems: 'center',
     justifyContent: 'center',
+    width: '90%',
   },
   btnTextStyle: {
     fontSize: scale(14),
     color: COLORS.WHITE,
     fontWeight: 'bold',
+  },
+  btnColorStyle: {
+    height: moderateScale(48),
+    backgroundColor: COLORS.GREY,
+    borderRadius: moderateScale(8),
+    marginHorizontal: moderateScale(10),
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  btnColorTextStyle: {
+    fontSize: scale(14),
+    color: COLORS.WHITE,
+    fontWeight: 'bold',
+    marginHorizontal: 20,
   },
 });
 export default styles;

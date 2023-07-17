@@ -5,7 +5,6 @@ import {
   moderateScale,
   moderateVerticalScale,
   scale,
-  verticalScale,
 } from 'react-native-size-matters';
 
 const styles = StyleSheet.create({

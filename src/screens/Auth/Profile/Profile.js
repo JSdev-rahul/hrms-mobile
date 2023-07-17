@@ -1,7 +1,7 @@
-import {View, Text, Image, TouchableOpacity} from 'react-native';
-import React, {useState} from 'react';
+import {View, Text, Image, TouchableOpacity, Alert} from 'react-native';
+import React from 'react';
 import HeaderAtom from '../../../components/atoms/header/HeaderAtom';
-import {COLORS, IMAGES} from '../../../constants';
+import {COLORS, IMAGES, ROUTES} from '../../../constants';
 import {styles} from './styles';
 import AppButton from '../../../components/atoms/buttons/AppButtons';
 import {useNavigation} from '@react-navigation/native';
@@ -9,8 +9,24 @@ import {folderName} from '../../../constants/listData';
 
 const Profile = () => {
   const navigation = useNavigation();
-  const [isPress, setIsPress] = useState(false);
-
+  const handleItemPress = item => {
+    switch (item?.title) {
+      case 'My Profile':
+        navigation.navigate(ROUTES.MY_PROFILE);
+        break;
+      case 'Bank Details':
+        navigation.navigate(ROUTES.BANK_DETAILS);
+        break;
+      case 'Slips':
+        navigation.navigate(ROUTES.SLIPS);
+        break;
+      case 'About':
+        navigation.navigate(ROUTES.ABOUT);
+        break;
+      default:
+        break;
+    }
+  };
   return (
     <View style={styles.container}>
       <HeaderAtom
@@ -31,7 +47,9 @@ const Profile = () => {
         <View style={styles.listContainer}>
           {folderName.map(item => {
             return (
-              <TouchableOpacity style={styles.listInnerContainer}>
+              <TouchableOpacity
+                onPress={() => handleItemPress(item)}
+                style={styles.listInnerContainer}>
                 <View style={styles.listInnerStyle}>
                   <View style={styles.imageStyle}>
                     <Image style={styles.iconStyle} source={item.Icon} />
