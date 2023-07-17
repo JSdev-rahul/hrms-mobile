@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {ROUTES} from '../constants';
 import {
-  About,
+  BankDetails,
   HomeScreen,
   LeaveRequest,
   Leaves,
@@ -52,6 +52,7 @@ const AppNavigator = () => {
         <Stack.Screen name={ROUTES.LEAVES} component={Leaves} />
         <Stack.Screen name={ROUTES.MY_PROFILE} component={MyProfile} />
         <Stack.Screen name={ROUTES.LEAVE_REQUEST} component={LeaveRequest} />
+        <Stack.Screen name={ROUTES.BANK_DETAILS} component={BankDetails} />
         <Stack.Screen name={ROUTES.SLIPS} component={Slips} />
         <Stack.Screen name={ROUTES.ABOUT} component={About} />
       </Stack.Navigator>
