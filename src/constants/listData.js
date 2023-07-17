@@ -138,6 +138,97 @@ export const options = [
   {id: 1, name: 'Sick Leave'},
   {id: 2, name: 'Early Leave'},
 ];
+
+export const slipsData = [
+  {
+    title: 'January 2023 Salary Slip',
+    imageSource: IMAGES.salarySlip,
+    rightImageSource: IMAGES.downloading,
+  },
+  {
+    title: 'February 2023 Salary Slip',
+    imageSource: IMAGES.salarySlip,
+    rightImageSource: IMAGES.downloading,
+  },
+  {
+    title: 'March 2023 Salary Slip',
+    imageSource: IMAGES.salarySlip,
+    rightImageSource: IMAGES.downloading,
+  },
+  {
+    title: 'April 2023 Salary Slip',
+    imageSource: IMAGES.salarySlip,
+    rightImageSource: IMAGES.downloading,
+  },
+  {
+    title: 'May 2023 Salary Slip',
+    imageSource: IMAGES.salarySlip,
+    rightImageSource: IMAGES.downloading,
+  },
+  {
+    title: 'June 2023 Salary Slip',
+    imageSource: IMAGES.salarySlip,
+    rightImageSource: IMAGES.downloading,
+  },
+  {
+    title: 'June 2023 Salary Slip',
+    imageSource: IMAGES.salarySlip,
+    rightImageSource: IMAGES.downloading,
+  },
+  {
+    title: 'June 2023 Salary Slip',
+    imageSource: IMAGES.salarySlip,
+    rightImageSource: IMAGES.downloading,
+  },
+  {
+    title: 'June 2023 Salary Slip',
+    imageSource: IMAGES.salarySlip,
+    rightImageSource: IMAGES.downloading,
+  },
+  {
+    title: 'June 2023 Salary Slip',
+    imageSource: IMAGES.salarySlip,
+    rightImageSource: IMAGES.downloading,
+  },
+  {
+    title: 'June 2023 Salary Slip',
+    imageSource: IMAGES.salarySlip,
+    rightImageSource: IMAGES.downloading,
+  },
+  {
+    title: 'June 2023 Salary Slip',
+    imageSource: IMAGES.salarySlip,
+    rightImageSource: IMAGES.downloading,
+  },
+  {
+    title: 'June 2023 Salary Slip',
+    imageSource: IMAGES.salarySlip,
+    rightImageSource: IMAGES.downloading,
+  },
+  {
+    title: 'June 2023 Salary Slip',
+    imageSource: IMAGES.salarySlip,
+    rightImageSource: IMAGES.downloading,
+  },
+];
+export const aboutData = [
+  {
+    id: 1,
+    title: 'Email',
+    email: 'santophy@gmail.com',
+    icon: IMAGES.arrow,
+  },
+  {
+    id: 2,
+    title: 'Privacy And Policy',
+    icon: IMAGES.arrow,
+  },
+  {
+    id: 3,
+    title: 'Terms And Conditions',
+    icon: IMAGES.arrow,
+  },
+];
 export const radioButton = [
   {
     id: 1,

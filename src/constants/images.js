@@ -20,4 +20,7 @@ export const IMAGES = {
   dropDown: require('../assets/images/drop_down.png'),
   datePicker: require('../assets/images/datePiker.png'),
   upload: require('../assets/images/upload.png'),
+  downloading: require('../assets/images/downloading.png'),
+  salarySlip: require('../assets/images/salary.png'),
+  meeting: require('../assets/images/meeting.png'),
 };
