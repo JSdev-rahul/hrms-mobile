@@ -1,44 +1,44 @@
-import {Image, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
-import DropDown from '../../../components/atoms/dropDown/DropDown';
-import {options} from '../../../constants/listData';
-import HeaderAtom from '../../../components/atoms/header/HeaderAtom';
-import {COLORS, IMAGES} from '../../../constants';
-import {useNavigation} from '@react-navigation/native';
-import RadioButton from '../../../components/atoms/radioButton/RadioButton';
-import DatePicker from 'react-native-date-picker';
 import styles from './styles';
-import {moderateScale, scale} from 'react-native-size-matters';
-import TextInputTemplate from '../../../components/templates/TextInputTemplate';
+import {options} from '../../../constants/listData';
+import {IMAGES} from '../../../constants';
+import {useNavigation} from '@react-navigation/native';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
+import DropDown from '../../../components/atoms/dropDown/DropDown';
+import HeaderAtom from '../../../components/atoms/header/HeaderAtom';
 import AppButton from '../../../components/atoms/buttons/AppButtons';
+import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import AppColorBtn from '../../../components/atoms/buttons/AppColorBtn';
+import RadioButton from '../../../components/atoms/radioButton/RadioButton';
+import TextInputTemplate from '../../../components/templates/TextInputTemplate';
 
 const LeaveRequest = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const radioButtonOptions = ['Full Time', 'First Half', 'Second Half'];
   const [selectedOption, setSelectedOption] = useState(radioButtonOptions[0]);
   const [date, setDate] = useState(new Date());
-  const [open, setOpen] = useState(false);
   const navigation = useNavigation();
   const onSelect = item => {
     setSelectedItem(item);
   };
 
-  const onDateChange = selectedDate => {
-    setDate(selectedDate);
+  const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
+
+  const showDatePicker = () => {
+    setDatePickerVisibility(true);
   };
 
-  const onConfirmDate = selectedDate => {
-    setDate(selectedDate);
-    setOpen(false);
+  const hideDatePicker = () => {
+    setDatePickerVisibility(false);
   };
 
-  const onCancelDate = () => {
-    setOpen(false);
+  const handleConfirm = date => {
+    console.warn('A date has been picked: ', date);
+    setDate(date);
+    hideDatePicker();
   };
-
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.reqContainer}>
       <HeaderAtom
         title="Leave Request"
         imageBack={IMAGES.backArrow}
@@ -50,14 +50,7 @@ const LeaveRequest = () => {
         data={options}
         onSelect={onSelect}
       />
-      <View
-        style={{
-          marginTop: 40,
-          flexDirection: 'row',
-          width: '90%',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
+      <View style={styles.radioButton}>
         {radioButtonOptions.map(singleOption => (
           <RadioButton
             key={singleOption}
@@ -67,26 +60,11 @@ const LeaveRequest = () => {
           </RadioButton>
         ))}
       </View>
-      <Text
-        style={{
-          fontWeight: '600',
-          bottom: 30,
-          marginHorizontal: moderateScale(8),
-        }}>
-        Date
-      </Text>
+      <Text style={styles.dateStyle}>Date</Text>
 
       <TouchableOpacity
-        onPress={() => setOpen(true)}
-        style={{
-          backgroundColor: COLORS.WHITE,
-          height: 40,
-          borderWidth: 0.5,
-          borderColor: COLORS.BLACK,
-          bottom: moderateScale(20),
-          marginHorizontal: moderateScale(10),
-          borderRadius: moderateScale(5),
-        }}>
+        onPress={showDatePicker}
+        style={styles.datePickerContainer}>
         <View style={styles.DatePicker}>
           <Image
             resizeMode="contain"
@@ -94,60 +72,35 @@ const LeaveRequest = () => {
             source={IMAGES.datePicker}
           />
         </View>
-        <View style={{justifyContent: 'center', top: 10, marginStart: 10}}>
-          <Text style={{fontWeight: '600'}}> {date.toDateString()}</Text>
+        <View style={styles.date}>
+          <Text style={styles.dateText}> {date.toDateString()}</Text>
         </View>
-        <DatePicker
-          modal
-          open={open}
-          date={date}
+        <DateTimePickerModal
+          isVisible={isDatePickerVisible}
           mode="date"
-          onDateChange={onDateChange}
-          onConfirm={onConfirmDate}
-          onCancel={onCancelDate}
+          onConfirm={handleConfirm}
+          onCancel={hideDatePicker}
         />
       </TouchableOpacity>
-      <View style={{marginHorizontal: 10}}>
-        <Text style={{fontWeight: '600', bottom: moderateScale(10)}}>
-          Reason for absence
-        </Text>
+      <View style={styles.absanceContainer}>
+        <Text style={styles.absanceText}>Reason for absence</Text>
         <TextInputTemplate
           placeholder={'E.g Feeling not well'}
-          style={{
-            fontSize: scale(12),
-            height: 100,
-            bottom: moderateScale(10),
-          }}
+          style={styles.inputStyle}
         />
       </View>
       <AppColorBtn
         label="Add File"
-        btnColorStyle={{
-          backgroundColor: COLORS.GREY_LIGHT,
-          color: COLORS.WHITE,
-        }}
+        btnColorStyle={styles.selectBtn}
         img={IMAGES.upload}
-        btnColorTextStyle={{
-          color: COLORS.BLACK,
-          fontWeight: '600',
-          marginHorizontal: 5,
-        }}
+        btnColorTextStyle={styles.selectButton}
         btnText={'Choose File'}
       />
-      <View
-        style={{
-          justifyContent: 'flex-end',
-          position: 'absolute',
-          bottom: moderateScale(10),
-          width: '100%',
-        }}>
+      <View style={styles.buttonContainer}>
         <AppButton
           label="Add File"
-          btnStyle={{
-            backgroundColor: COLORS.GREEN,
-            color: COLORS.WHITE,
-          }}
-          btnTextStyle={{color: COLORS.WHITE}}
+          btnStyle={styles.sendButton}
+          btnTextStyle={styles.btnText}
           btnText={'Send'}
           onPress={() => navigation.navigate(ROUTES.LEAVE_REQUEST)}
         />

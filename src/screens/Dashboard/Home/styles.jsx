@@ -4,6 +4,7 @@ import {moderateScale, scale} from 'react-native-size-matters';
 import {moderateVerticalScale} from 'react-native-size-matters';
 const styles = StyleSheet.create({
   container: {flex: 1},
+  innerContainer: {flex: 1},
   cardHeader: {
     marginHorizontal: 20,
     marginTop: 15,
@@ -14,6 +15,12 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
+  },
+  listHeaderContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+    marginHorizontal: 20,
   },
   btnStyle: {
     color: COLORS.BLACK,
@@ -113,10 +120,11 @@ const styles = StyleSheet.create({
   titleWeekDay: {
     margin: moderateScale(10),
     fontWeight: 'bold',
-    backgroundColor: COLORS.LIGHT_GREY,
     padding: 10,
     borderRadius: 10,
-    color: COLORS.BLACK,
+    color: COLORS.WHITE,
+    backgroundColor: COLORS.GREEN,
+    textAlign: 'center',
   },
   weekContainerStyle: {
     flex: 1,
@@ -132,9 +140,10 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     borderRadius: 10,
     color: COLORS.BLACK,
+    fontSize: scale(11),
   },
   weekTime: {
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     alignSelf: 'center',
     borderRadius: 10,
     color: COLORS.BLACK,
@@ -147,6 +156,8 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     alignSelf: 'center',
     borderRadius: 10,
+    fontSize: scale(11),
+    color: COLORS.GREY,
   },
   progressView: {
     width: 100,
@@ -156,6 +167,8 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     alignSelf: 'center',
     borderRadius: 10,
+    fontSize: scale(11),
+    color: COLORS.GREY,
   },
   titleWeek: {
     fontWeight: 'bold',
@@ -164,6 +177,11 @@ const styles = StyleSheet.create({
   titleWeekTime: {
     fontWeight: 'bold',
     color: COLORS.BLACK,
+  },
+  buttonStyle: {
+    color: COLORS.WHITE,
+    height: 40,
+    width: '50%',
   },
 });
 export default styles;

@@ -1,5 +1,5 @@
 import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './styles';
 import {COLORS, IMAGES, ROUTES} from '../../../constants';
 import TextInputTemplate from '../../../components/templates/TextInputTemplate';

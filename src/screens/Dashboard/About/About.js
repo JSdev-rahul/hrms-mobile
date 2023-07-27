@@ -1,13 +1,10 @@
-import {FlatList, Image, ScrollView, View} from 'react-native';
+import {Image, ScrollView, View} from 'react-native';
 import React from 'react';
 import HeaderAtom from '../../../components/atoms/header/HeaderAtom';
-import {COLORS, IMAGES} from '../../../constants';
+import {IMAGES} from '../../../constants';
 import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
-import ItemAbout from './ItemAbout';
 import {List, Text} from 'react-native-paper';
-import {moderateScale, moderateVerticalScale} from 'react-native-size-matters';
-import {aboutData} from '../../../constants/listData';
 
 const About = () => {
   const navigation = useNavigation();
@@ -22,22 +19,16 @@ const About = () => {
         onPress={() => navigation.goBack()}
       />
 
-      <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <Image source={IMAGES.meeting} style={{width: 350, height: 350}} />
+      <View style={styles.imageContainer}>
+        <Image source={IMAGES.meeting} style={styles.meetingImage} />
       </View>
-      <ScrollView style={{flex: 1}}>
+      <ScrollView style={styles.listContainer}>
         <View>
           <List.Section style={styles.listSection}>
-            <List.Accordion
-              title="Email"
-              titleStyle={{
-                color: COLORS.BLACK,
-                paddingRight: moderateScale(20),
-                marginVertical: 10,
-              }}>
+            <List.Accordion title="Email" titleStyle={styles.emailStyle}>
               <List.Item
                 title="santophy@gmail.com"
-                titleStyle={{paddingRight: 30}}
+                titleStyle={styles.emailTitle}
               />
             </List.Accordion>
           </List.Section>
@@ -46,18 +37,14 @@ const About = () => {
           <List.Section style={styles.listSection}>
             <List.Accordion
               title="Terms And Conditions"
-              titleStyle={{
-                color: COLORS.BLACK,
-                paddingRight: moderateScale(20),
-                marginVertical: 10,
-              }}>
+              titleStyle={styles.termConditon}>
               <List.Item
                 title="santophy@gmail.com"
-                titleStyle={{paddingRight: 30}}
+                titleStyle={styles.titleStyle}
               />
               <List.Item
                 title="santophy@gmail.com"
-                titleStyle={{paddingRight: 30}}
+                titleStyle={styles.titleStyle}
               />
             </List.Accordion>
           </List.Section>
@@ -66,27 +53,21 @@ const About = () => {
           <List.Section style={styles.listSection}>
             <List.Accordion
               title="Privacy And Policies"
-              titleStyle={{
-                color: COLORS.BLACK,
-                paddingRight: moderateScale(20),
-                marginVertical: 10,
-              }}>
+              titleStyle={styles.listAccordion}>
               <List.Item
                 title="santophy@gmail.com"
-                titleStyle={{paddingRight: 30}}
+                titleStyle={styles.titleStyle}
               />
               <List.Item
                 title="santophy@gmail.com"
-                titleStyle={{paddingRight: 30}}
+                titleStyle={styles.titleStyle}
               />
             </List.Accordion>
           </List.Section>
         </View>
       </ScrollView>
-      <View style={{paddingBottom: 10}}>
-        <Text style={{textAlign: 'center', color: COLORS.GREEN}}>
-          Version 1.0.0
-        </Text>
+      <View style={styles.versionStyle}>
+        <Text style={styles.versionTextStyle}>Version 1.0.0</Text>
       </View>
     </View>
   );

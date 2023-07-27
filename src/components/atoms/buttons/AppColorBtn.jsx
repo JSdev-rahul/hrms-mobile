@@ -12,7 +12,7 @@ const AppColorBtn = ({
 }) => {
   return (
     <>
-      <Text style={{marginStart: 10, bottom: 5, fontWeight: '600'}}>
+      <Text style={styles.labelStyle}>
         {label}
       </Text>
       <TouchableOpacity
@@ -22,7 +22,7 @@ const AppColorBtn = ({
         {!!img ? (
           <View style={{flexDirection: 'row'}}>
             <Image
-              style={{width: 20, height: 20, marginHorizontal: 10}}
+              style={styles.imageStyle}
               source={img}
             />
             <Text style={{...styles.btnColorTextStyle, ...btnColorTextStyle}}>

@@ -1,24 +1,18 @@
 import {View, Text, TouchableOpacity, StyleSheet, Image} from 'react-native';
-import {COLORS, IMAGES} from '../../../constants';
+import {IMAGES} from '../../../constants';
 import {useState} from 'react';
 import {moderateScale} from 'react-native-size-matters';
-
+import {styles} from './styles';
 const DropDown = ({data = [], value = null, onSelect = () => {}, label}) => {
   const [showOptions, setShowOptions] = useState(false);
   const handleOptionPress = option => {
     onSelect(option);
     setShowOptions(false);
   };
-
   return (
     <View>
       <Text
-        style={{
-          fontWeight: 'bold',
-          marginHorizontal: 10,
-          top: moderateScale(5),
-          fontWeight: 'bold',
-        }}>
+        style={styles.labelStyle}>
         {label}
       </Text>
 
@@ -26,7 +20,7 @@ const DropDown = ({data = [], value = null, onSelect = () => {}, label}) => {
         onPress={() => setShowOptions(!showOptions)}
         activeOpacity={0.8}
         style={styles.dropDownStyle}>
-        <Text style={{fontWeight: '600'}}>
+        <Text style={styles.nameStyle}>
           {value ? value.name : 'Choose an option'}
         </Text>
 
@@ -47,12 +41,8 @@ const DropDown = ({data = [], value = null, onSelect = () => {}, label}) => {
                 <TouchableOpacity
                   key={String(i)}
                   onPress={() => handleOptionPress(val)}
-                  style={{
-                    padding: 10,
-                    borderWidth: 0.3,
-                    borderColor: '#cfcfcf',
-                  }}>
-                  <Text style={{fontWeight: '500'}}>{val.name}</Text>
+                  style={styles.nameTextStyle}>
+                  <Text style={styles.nameText}>{val.name}</Text>
                 </TouchableOpacity>
               );
             })}
@@ -63,20 +53,6 @@ const DropDown = ({data = [], value = null, onSelect = () => {}, label}) => {
   );
 };
 
-const styles = StyleSheet.create({
-  dropDownStyle: {
-    padding: 10,
-    marginHorizontal: 10,
-    marginTop: 10,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    borderRadius: 5,
-    minHeight: 42,
-    backgroundColor: COLORS.WHITE,
-
-    borderWidth: 0.5,
-    borderColor: COLORS.BLACK,
-  },
-});
+ 
 
 export default DropDown;

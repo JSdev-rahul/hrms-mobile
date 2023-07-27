@@ -1,7 +1,7 @@
-import {View, Text, Image, TouchableOpacity, Alert} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import HeaderAtom from '../../../components/atoms/header/HeaderAtom';
-import {COLORS, IMAGES, ROUTES} from '../../../constants';
+import {IMAGES, ROUTES} from '../../../constants';
 import {styles} from './styles';
 import AppButton from '../../../components/atoms/buttons/AppButtons';
 import {useNavigation} from '@react-navigation/native';
@@ -65,12 +65,8 @@ const Profile = () => {
         </View>
         <View style={styles.btnContainer}>
           <AppButton
-            btnStyle={{
-              backgroundColor: COLORS.GREEN,
-              color: COLORS.WHITE,
-              width: '50%',
-            }}
-            btnTextStyle={{color: COLORS.WHITE}}
+            btnStyle={styles.buttonStyle}
+            btnTextStyle={styles.buttonText}
             btnText={'Logout'}
             onPress={() => navigation.navigate(ROUTES.HOME_SCREEN)}
           />

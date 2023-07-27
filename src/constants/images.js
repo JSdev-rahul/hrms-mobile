@@ -23,4 +23,7 @@ export const IMAGES = {
   downloading: require('../assets/images/downloading.png'),
   salarySlip: require('../assets/images/salary.png'),
   meeting: require('../assets/images/meeting.png'),
+  radio_selected: require('../assets/images/radio_selected.png'),
+  radio_unselected: require('../assets/images/radio_unselected.png'),
+
 };

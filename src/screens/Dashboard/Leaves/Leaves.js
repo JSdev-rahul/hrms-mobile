@@ -1,5 +1,6 @@
 import {FlatList, View} from 'react-native';
 import React, {useState} from 'react';
+import styles from './styles';
 import HeaderAtom from '../../../components/atoms/header/HeaderAtom';
 import {COLORS, IMAGES, ROUTES} from '../../../constants';
 import {leaves, leavesStatus} from '../../../constants/listData';
@@ -7,16 +8,17 @@ import ItemLeaves from './ItemLeaves';
 import {useNavigation} from '@react-navigation/native';
 import ItemLeavesStatus from './ItemLeavesStatus';
 import AppButton from '../../../components/atoms/buttons/AppButtons';
-import {moderateScale} from 'react-native-size-matters';
 
 const Leaves = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const navigation = useNavigation();
 
   const handleCategoryPress = item => {
+    console.log(item, 'here is the main item');
+
     setSelectedCategory(prevCategory => {
       if (prevCategory === item.id) {
-        return '';
+        return selectedCategory;
       }
       return item.id;
     });
@@ -25,11 +27,13 @@ const Leaves = () => {
   let filteredList = leavesStatus.filter(
     item => item.status_id === selectedCategory,
   );
+
   if (selectedCategory === '') {
     filteredList = leavesStatus;
   }
+
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.leaveContainer}>
       <HeaderAtom
         title="Leaves"
         imageBack={IMAGES.backArrow}
@@ -38,13 +42,7 @@ const Leaves = () => {
       <View>
         <FlatList
           horizontal
-          contentContainerStyle={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: COLORS.WHITE,
-            width: '95%',
-            marginHorizontal: 10,
-          }}
+          contentContainerStyle={styles.itemLeave}
           showsHorizontalScrollIndicator={false}
           data={leaves}
           renderItem={({item}) => (
@@ -62,18 +60,9 @@ const Leaves = () => {
           keyExtractor={item => item.id.toString()}
         />
       </View>
-      <View
-        style={{
-          justifyContent: 'flex-end',
-          position: 'absolute',
-          bottom: moderateScale(30),
-          width: '100%',
-        }}>
+      <View style={styles.leaveButton}>
         <AppButton
-          btnStyle={{
-            backgroundColor: COLORS.GREEN,
-            color: COLORS.WHITE,
-          }}
+          btnStyle={styles.leaveBtn}
           btnTextStyle={{color: COLORS.WHITE}}
           btnText={'Leave Request'}
           onPress={() => navigation.navigate(ROUTES.LEAVE_REQUEST)}

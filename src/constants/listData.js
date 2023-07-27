@@ -259,7 +259,29 @@ export const weekStatus = [
     id: 2,
     time: '12 h 40 m / 40 Hrs',
     day: `5 Feb
- Mon`,
+ Tue`,
+    current_time: 'This Week',
+    title: 'Working Time',
+    totalTime: '08 hrs 14 min',
+    from: '10 : 00 AM',
+    to: '7 : 30 PM',
+  },
+  {
+    id: 1,
+    time: '12 h 40 m / 40 Hrs',
+    day: `5 Feb
+ Wed`,
+    current_time: 'This Week',
+    title: 'Working Time',
+    totalTime: '08 hrs 14 min',
+    from: '10 : 00 AM',
+    to: '7 : 30 PM',
+  },
+  {
+    id: 1,
+    time: '12 h 40 m / 40 Hrs',
+    day: `5 Feb
+ Wed`,
     current_time: 'This Week',
     title: 'Working Time',
     totalTime: '08 hrs 14 min',

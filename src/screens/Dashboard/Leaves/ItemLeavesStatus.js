@@ -2,42 +2,21 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {COLORS} from '../../../constants';
 import {moderateScale, moderateVerticalScale} from 'react-native-size-matters';
+import styles from './styles';
 
 const ItemLeavesStatus = ({item}) => {
   return (
     <TouchableOpacity>
-      <View
-        style={{
-          flexDirection: 'row',
-          borderLeftWidth: 1,
-          borderColor: COLORS.PURPLE,
-          justifyContent: 'space-between',
-          marginVertical: moderateVerticalScale(10),
-          marginHorizontal: moderateScale(10),
-          backgroundColor: COLORS.WHITE,
-          borderRadius: moderateScale(5),
-          padding: moderateScale(5),
-        }}>
-        <View
-          style={{
-            marginHorizontal: moderateScale(10),
-          }}>
-          <Text style={{fontWeight: 'bold'}}>{item.from}</Text>
-          <Text style={{fontWeight: 'bold'}}>{item.to}</Text>
+      <View style={styles.leaveStatusContainer}>
+        <View style={styles.textContainer}>
+          <Text style={styles.fromStyle}>{item.from}</Text>
+          <Text style={styles.fromStyle}>{item.to}</Text>
         </View>
+        <Text style={styles.typeStyle}>{item.type}</Text>
         <Text
           style={{
-            alignSelf: 'center',
-            marginHorizontal: moderateScale(10),
-            fontWeight: 'bold',
-          }}>
-          {item.type}
-        </Text>
-        <Text
-          style={{
+            ...styles.statusStyle,
             color: item.color,
-            alignSelf: 'center',
-            marginHorizontal: moderateScale(10),
           }}>
           {item.status}
         </Text>

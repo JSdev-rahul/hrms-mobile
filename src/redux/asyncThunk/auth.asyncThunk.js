@@ -1,11 +1,12 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import { ASYNC_ROUTES } from '../constant/redux.constant';
+import { AuthService } from '../services/auth.service';
   
 export class AuthAsyncThunk {
   constructor() {
     this.authServices = new AuthService();
   }
-  getServiceCategories = createAsyncThunk(
+  authAsyncThunk = createAsyncThunk(
     ASYNC_ROUTES.SIGN_IN,
     async (payload, {rejectWithValue}) => {
       try {
@@ -13,7 +14,6 @@ export class AuthAsyncThunk {
           await this.authServices.authService(
             payload,
           );
-
         return response;
       } catch (err) {
         return rejectWithValue(err);
@@ -21,5 +21,4 @@ export class AuthAsyncThunk {
     },
   );
 }
-
 export const authThunk = new AuthAsyncThunk();

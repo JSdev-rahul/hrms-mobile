@@ -32,5 +32,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginHorizontal: 20,
   },
+  imageStyle: {
+    width: 20,
+    height: 20,
+    marginHorizontal: 10,
+  },
+  labelStyle: {
+    marginStart: 10,
+    bottom: 5,
+    fontWeight: '600',
+  },
 });
 export default styles;

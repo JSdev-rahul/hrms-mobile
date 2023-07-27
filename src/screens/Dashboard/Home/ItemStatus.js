@@ -24,10 +24,8 @@ const ItemStatus = ({item, index}) => {
         <View style={styles.buttonContainer}>
           <AppButton
             btnStyle={{
+              ...styles.buttonStyle,
               backgroundColor: item.backgroundColor,
-              color: COLORS.WHITE,
-              height: 40,
-              width: '50%',
             }}
             btnTextStyle={{color: COLORS.WHITE}}
             btnText={item.status}

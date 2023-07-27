@@ -107,4 +107,12 @@ export const styles = StyleSheet.create({
   btnText2: {
     color: COLORS.WHITE,
   },
+  buttonStyle: {
+    backgroundColor: COLORS.GREEN,
+    color: COLORS.WHITE,
+    width: '50%',
+  },
+  buttonText: {
+    color: COLORS.WHITE,
+  },
 });

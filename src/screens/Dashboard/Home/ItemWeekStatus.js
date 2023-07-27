@@ -1,7 +1,6 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import {COLORS} from '../../../constants';
-import {moderateScale, moderateVerticalScale} from 'react-native-size-matters';
 import {ProgressBar} from 'react-native-paper';
 import styles from './styles';
 
@@ -18,7 +17,7 @@ const ItemWeekStatus = ({item}) => {
           <View style={styles.weekTimeContainer}>
             <Text style={styles.titleFrom}>{item.from}</Text>
             <View style={styles.progressView}>
-              <ProgressBar progress={0.2} color={COLORS.GREEN} />
+              <ProgressBar progress={0.6} color={COLORS.GREEN} />
             </View>
             <Text style={styles.titleTo}>{item.to}</Text>
           </View>

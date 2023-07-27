@@ -1,8 +1,7 @@
 import {View, Image, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import styles from './styles';
-import {scale} from 'react-native-size-matters';
-import {COLORS} from '../../../constants';
+
 const HeaderAtom = ({
   imageBack,
   title,
@@ -16,15 +15,7 @@ const HeaderAtom = ({
         <Image style={styles.headerImageStyle} source={imageBack} />
       </TouchableOpacity>
 
-      <Text
-        style={{
-          textAlign: 'center',
-          fontSize: scale(16),
-          fontWeight: 'bold',
-          color: COLORS.GREEN,
-        }}>
-        {title}
-      </Text>
+      <Text style={styles.titleStyle}>{title}</Text>
       <TouchableOpacity
         onPressIn={onPressIn}
         style={styles.headerSearchContainer}>

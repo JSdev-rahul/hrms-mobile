@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     padding: moderateScale(20),
   },
   imageContainer: {
-    backgroundColor: COLORS.LIGHT_GREY,
+    backgroundColor: COLORS.PURPLE,
     borderRadius: moderateScale(20),
     width: moderateScale(40),
     height: moderateScale(40),
@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     width: 20,
     height: 20,
     alignSelf: 'center',
+    tintColor: COLORS.WHITE,
   },
   titleStyle: {
     marginHorizontal: moderateScale(10),

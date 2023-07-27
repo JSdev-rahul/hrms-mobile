@@ -1,22 +1,16 @@
 import React, {useRef, useCallback, useMemo, useEffect} from 'react';
-import {
-  View,
-  FlatList,
-  Dimensions,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
-import BottomSheet, {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
+import {View, FlatList, TouchableOpacity, Image} from 'react-native';
+import BottomSheet from '@gorhom/bottom-sheet';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {Icons} from '../../../constants/listData';
-import {COLORS, ROUTES} from '../../../constants';
+import {ROUTES} from '../../../constants';
 import {useNavigation} from '@react-navigation/native';
 import {styles} from './styles';
 
 function BottomSheetAtom() {
   const bottomSheetRef = useRef(0);
   const navigation = useNavigation();
-  const snapPoints = useMemo(() => ['26%', '30%'], []);
+  const snapPoints = useMemo(() => ['18%', '60%'], []);
   const handleSheetChanges = useCallback(index => {
     console.log('handleSheetChanges', index);
   }, []);
@@ -38,35 +32,17 @@ function BottomSheetAtom() {
   };
 
   const renderItem = ({item}) => {
-    console.log(item, '..........item');
     return (
       <View>
         <TouchableOpacity
-          style={{
-            width: Dimensions.get('window').width / 4.4,
-            marginHorizontal: 20,
-            marginTop: 1,
-            height: Dimensions.get('window').height / 18,
-            marginVertical: 10,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
+          style={styles.innerContainer}
           onPress={() => handleItemPress(item)}>
           <View
-            style={{
-              justifyContent: 'center',
-              alignItems: 'center',
-              borderRadius: 30,
-              borderColor: COLORS.GREEN,
-              borderWidth: 2,
-              padding: 10,
-              backgroundColor: COLORS.WHITE,
-            }}>
+            style={styles.imageStyle}>
             <Image
-              style={{height: 25, width: 25, tintColor: COLORS.GREEN}}
+              style={styles.iconStyle}
               source={item.icon}
             />
-            {/* <Text style={{ color: COLORS.WHITE }}>{item.title}</Text> */}
           </View>
         </TouchableOpacity>
       </View>

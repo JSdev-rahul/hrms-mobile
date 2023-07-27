@@ -26,7 +26,7 @@ const Slips = () => {
       <List.Section style={styles.listSection}>
         <List.Accordion
           title="Salary Slips"
-          titleStyle={{color: COLORS.BLACK, paddingRight: moderateScale(20)}}
+          titleStyle={styles.slipTitleStyle}
           left={props => <List.Icon {...props} />}>
           <FlatList
             showsVerticalScrollIndicator={false}

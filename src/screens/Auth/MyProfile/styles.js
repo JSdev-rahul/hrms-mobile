@@ -3,6 +3,9 @@ import {moderateVerticalScale, moderateScale} from 'react-native-size-matters';
 import {COLORS} from '../../../constants';
 import {scale} from 'react-native-size-matters';
 const styles = StyleSheet.create({
+  mainContainer: {
+    flex: 1,
+  },
   container: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -35,6 +38,12 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: moderateScale(34),
     bottom: moderateScale(2),
+    backgroundColor: COLORS.WHITE,
+    borderRadius: 20,
+  },
+  locationInput: {
+    fontSize: scale(12),
+    marginHorizontal: moderateScale(10),
   },
   nameContainer: {
     marginTop: moderateVerticalScale(10),
@@ -63,6 +72,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: moderateVerticalScale(10),
+  },
+  buttonStyle: {
+    backgroundColor: COLORS.GREEN,
+    color: COLORS.WHITE,
+    width: moderateScale(200),
+  },
+  errorStyle: {
+    color: 'red',
+    marginLeft: 10,
+    fontSize: 12,
   },
 });
 export default styles;

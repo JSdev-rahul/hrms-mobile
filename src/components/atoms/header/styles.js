@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {COLORS} from '../../../constants';
+import { scale } from 'react-native-size-matters';
 const styles = StyleSheet.create({
   headerListContainer: {
     flexDirection: 'row',
@@ -52,5 +53,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginHorizontal: 10,
   },
+  titleStyle:{
+    textAlign: 'center',
+    fontSize: scale(16),
+    fontWeight: 'bold',
+    color: COLORS.GREEN,
+  }
 });
 export default styles;

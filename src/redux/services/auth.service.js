@@ -5,7 +5,7 @@ export class AuthService {
   authService = () => {
     return new Promise((resolve, reject) => {
       let config = {
-        url: SERVICE_ROUTES.GET_SERVICE_CATEGORIES,
+        url: SERVICE_ROUTES.SIGN_IN,
         method: METHODS.POST,
       };
 
